@@ -136,7 +136,229 @@ $(document).ready(function() {
 
  <body  style="background-color:FFE4B5;" ng-controller="groupWiseController" >
 
+<<<<<<< HEAD
  <div ng-include="'allInclude.html'"></div>
+=======
+ <div class='menujohanes'  style="position:sticky;top:0;z-index:1;" >
+        
+       <ul class='dark_menu' >
+
+          
+<li  >
+            <a>
+              Transaction &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               
+            </a>
+            <ul>
+              <li>
+                <a href="Transaction.html">
+                  New
+                </a>
+              </li>
+
+                <li>
+                <a href="orders.html">
+                  Order Management
+                </a>
+              </li>
+  <!--              <li>
+                <a href="list.html">
+======= -->
+               <li>
+                <a href="List.html">
+
+                  List
+                </a>
+              </li>
+                <li>
+                <a href="Phistory.html">
+                  Party History
+                </a>
+              </li>
+            </ul>
+          
+          </li>
+
+       <li >
+
+            <a href='#'>
+              Inventory &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+            <ul>
+                 <li id='sub'>
+                    <a href='#'>
+                    Barcoding
+                    </a>
+                     <ul>
+                         <li>
+            <a href='Barcode Summary.html'>
+              Barcode Summary
+                             </a></li><li>
+            <a href='Barcode Generation.html'>
+              Barcode Generation
+                             </a></li>
+                             <li>
+            <a href='stockverification.html'>
+              Stock Verification
+                             </a></li>
+                     </ul>
+                         
+                </li>
+
+               <li>
+<li>
+                <a href="Item.html">
+                  Item
+                </a>
+              </li>
+               <li ng-if="desgination == 'Admin'">
+
+                <a href="staff.html">
+
+                  Staff
+                </a>
+              </li>
+              <li ng-if="desgination == 'Admin'">
+
+                <a href="purity.html">
+
+                  Purity
+                </a>
+              </li>
+              <li ng-if="desgination == 'Admin'">
+
+                <a href="salesCategory.html">
+
+                 SalesCategory
+                </a>
+              </li>
+              <li ng-if="desgination == 'Admin'">
+
+                <a href="inventoryGroup.html">
+
+                  InventoryGroup
+                </a>
+              </li>
+             
+             
+            </ul>
+          </li>
+          
+          
+          <li >
+            <a href='#'>
+              Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+            <ul>
+               <li>
+                <a href="ClosingStockBookByGroupItem.html">
+                
+                  Closing Stock Book By Group Item
+                </a>
+              </li>
+                
+
+               <li>
+                <a href="DailyClosingStock.html">
+                  
+                  Daily Closing Stock
+                </a>
+              </li>
+              <li>
+                <a href="GroupWise.html">
+                  Group Wise
+                </a>
+              </li>
+             
+              
+            </ul>
+          </li>
+          <li >
+
+            <a href="Tax Configuration.html">
+
+              Tax Configuration
+            </a>
+            <!-- <ul>
+                
+
+               <li>
+                <a href="indextaxation.html">
+                  Tax Structure
+                </a>
+              </li> -->
+              <!-- <li>
+                <a href="taxation.html">
+                  Tax Name
+                </a>
+              </li> -->
+             
+              
+            <!-- </ul> -->
+          </li>
+            
+        
+          </li>
+<!-- <<<<<< HEAD:public/Transaction.html
+          <li  id="name1">
+            <a>
+======= -->
+          <li >
+              <a href="dailyRates.html">
+              Daily Rates 
+            </a>
+            </li>
+           <li >
+            <a href='#'>
+              Accounts &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+            <ul>
+               <li>
+                <a href="receipts.html">
+                
+                  Receipt
+                </a>
+              </li>
+                
+
+               <li>
+                <a href="payments.html">
+                  
+                  Payment
+                </a>
+              </li>
+              <!-- <li>
+                <a href="GroupWise.html">
+                  Group Wise
+                </a>
+              </li> -->
+             
+              
+            </ul>
+          </li>
+          <li  id="name1" >
+            <a >
+
+             {{usernamedetails}}
+               
+            </a>
+          
+          </li>
+          <li id="name1">
+            <a href="loginPage.html" >
+              Sign Out
+               
+            </a>
+          
+          </li>
+          
+        </ul>
+
+
+        
+      </div>
+  
+>>>>>>> 419e56866eda8a544dd5e75cd96aa4dc596e1b99
  <div  class="center" ng-cloak>
   <h3 >Group Wise</h3>
     <!-- <a href="index1.html" class="btn btn-primary active">Main</a>

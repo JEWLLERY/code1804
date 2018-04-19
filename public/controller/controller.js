@@ -342,7 +342,7 @@ $scope.inSel= function(itemn,in1) {
 
       console.log(getPage)
 if (getPage=="Receipt Voucher" ) {
- 
+ //alert("rv11")
  $scope.transaction=getPage
  //alert($scope.transaction)
    $scope.test = 'display'
@@ -359,7 +359,7 @@ if (getPage=="Receipt Voucher" ) {
 
       console.log(page)
 if (page == "Receipt Voucher" ) {
- 
+ //alert("rv")
  $scope.transaction=page
    $scope.te = 'disp'
 
@@ -378,7 +378,7 @@ if (page == "Receipt Voucher" ) {
 
       console.log(getPage)
 if (issue=="Issue Voucher" ) {
- 
+ ///alert("kk")
  $scope.transaction=issue
    $scope.te = 'disp'
    $scope.edituseritButton == true
@@ -426,6 +426,12 @@ $http.get('/getOrderNum/'+idVocherPartyId).success(function(response){
          $scope.showOrderNO=response[0].orderNO;
          console.log(response)
          $scope.userit=response;
+         // var makeCompleted=response[0].orderStatus
+         // makeCompleted="completed"
+        /// alert(makeCompleted)
+        delete( $scope.userit[0]._id);
+         //$scope.userit[0].orderStatus=makeCompleted;
+         //alert($scope.userit[0].orderStatus+"ll")
 console.log($scope.userit)
         })
 
@@ -465,7 +471,7 @@ var PartyId=window.sessionStorage.setItem("idVocherPartyId",null)
              //$scope.orderRes=response
                })
   }
-
+//alert("Klllllll")
 window.location.href="orderMaking.html"
 
   }
@@ -4294,15 +4300,19 @@ $scope.resu ;
 
     var flagCall = function(){
 
+<<<<<<< HEAD
              if (($scope.transaction == "Issue Voucher" && $scope.te=="disp") || ($scope.transaction == "Receipt Voucher" && $scope.te=="disp")) {
+=======
+             if (($scope.transaction == "Issue Voucher" && $scope.te=="disp")  || ($scope.transaction == "Receipt Voucher" && $scope.te=="disp") ) {
+>>>>>>> 419e56866eda8a544dd5e75cd96aa4dc596e1b99
                   $scope.fromOrder();
              };
 
             if(flag == 0){
               $scope.payButtonDIsplay = "true";
                 arrcon =[];
-             // alert(" validations are clear")
-
+              //alert(" validations are clear")
+//alert($scope.userit[0].orderStatus)
         console.log( $scope.partyname)   
         $scope.user = $scope.userit;
         console.log($scope.user)
@@ -4352,6 +4362,7 @@ $scope.resu ;
              $scope.remainingNtWt=remainingNtWt
               //alert($scope.remainingNtWt)
          }
+            //alert("222")
                  var data = $scope.transaction+","+$scope.userit[i].barcodeNumber+","+$scope.userit[i].chgunt+","+$scope.userit[i].date+","+$scope.userit[i].desc+","
                      +$scope.userit[i].final+","+$scope.userit[i].gpcs+","+$scope.userit[i].gwt+","+$scope.userit[i].itemName+","+$scope.userit[i].ntwt+","+$scope.partyname+","
                      +$scope.userit[i].size+","+$scope.userit[i].taxval+","+$scope.userit[i].taxamt+","+$scope.userit[i].stwt+","+$scope.userit[i].wastage+","+$scope.userit[i].stval+","
@@ -4371,8 +4382,13 @@ $scope.resu ;
                        }
                      
                        var ordstatus = $scope.userit[i].orderStatus
+<<<<<<< HEAD
                        
+=======
+                       //alert("4444")
+>>>>>>> 419e56866eda8a544dd5e75cd96aa4dc596e1b99
                        if($scope.userit[i].orderStatus == "available"){
+                       //alert("55")
                         // if($scope.transaction!="Approval Out"){
                         //  alert("entered into orderstatus available")
                              $scope.userit[i]._id = null;
@@ -4386,6 +4402,7 @@ $scope.resu ;
                                            $scope.userit[i].orderStatus = "Inprogress";
                                   
                                     
+<<<<<<< HEAD
                                       
                                     if(parseFloat($scope.saleinv[0].invoiceValue)<parseFloat($scope.saleinv[0].adj)){
                                         //alert("kk")
@@ -4398,6 +4415,9 @@ $scope.resu ;
                                         window.sessionStorage.setItem("twoReceiptVal",JSON.stringify($scope.regularOrder))
                                       window.sessionStorage.setItem("threeReceiptVal",JSON.stringify(adjust))
                                       }
+=======
+         
+>>>>>>> 419e56866eda8a544dd5e75cd96aa4dc596e1b99
 
 
 
@@ -4407,19 +4427,21 @@ $scope.resu ;
                                }
                              
                                else{
-                                 // alert("change barcode");
+                                 //alert("change barcode");
                                   $scope.userit[i].orderStatus = "completed";
                                   $scope.userit[i].stockInward='no';
                                   updateBatch($scope.userit[i].barcode,$scope.userit[i].orderStatus);
                                }
                                       $scope.userit[i].billType =  $scope.billtype;
                              
-                                  // }
+                    //alert("2222")              // }
                              if($scope.transaction!="Approval Out"){
+                              //alert("99")
                              $http.post('/insertUseritDetails',$scope.userit[i]).success(function(response){
                                     // alert(response)
                                         console.log(response)
                                          if ($scope.transaction!='Valuation') {
+
                                            $scope.userit[i].orderStatus = "Inprogress";
                                              updateBatch($scope.userit[i].barcode,$scope.userit[i].orderStatus); 
                                        
@@ -4429,7 +4451,7 @@ $scope.resu ;
                                        
                                           }
                                         // if($scope.transaction=="Approval Out"){
-
+//alert("11")
                                         
                                     // }
                                          $scope.userit[i]._id = response._id;
@@ -4448,7 +4470,7 @@ $scope.resu ;
                                    })
                                 }
                                 else{
-
+//alert("10")
                                   if(flag==0){
                                   $http.post('/insertUseritDetails',$scope.userit[i]).success(function(response){
 
@@ -4460,10 +4482,14 @@ $scope.resu ;
                                   }
                                 }
                                    
+<<<<<<< HEAD
 
+=======
+//alert("lllljj")
+>>>>>>> 419e56866eda8a544dd5e75cd96aa4dc596e1b99
                         }else if($scope.userit[i].orderStatus == "Inprogress"){
-                                 //  alert("entered into orderstatus Inprogress")
-
+                     //alert("entered into orderstatus Inprogress")
+//alert("uuuuu")
                                     $scope.userit[i].billType =  $scope.billtype;
                              
                                   $scope.userit[i].partyname= $scope.partyname;
@@ -4493,8 +4519,12 @@ $scope.resu ;
                                                 $scope.idUpadtesCall($scope.userit[i]._id);
                                       })
                                   payAlertCall();
-                         }else if($scope.userit[i].orderStatus == "completed"){
-                                       // alert("completed");
+                                  //alert("ooo")
+                         //alert("rrr"+$scope.userit[0].orderStatus+$scope.userit[i].orderStatus)
+                         }
+
+                         else if($scope.userit[i].orderStatus == "completed"){
+                                        //alert("completed");
                                         payAlertCall();
                                    //console.log("completed then update ")
                                    //console.log( $scope.userit[i].barcode)
@@ -4593,7 +4623,7 @@ $scope.resu ;
                            }
 
                           else if($scope.transaction =='Issue Voucher'){
-                            
+                            //alert("aaaa")
                             $scope.userit[i].stockInward = "no";
                             $scope.userit[i].orderStatus = "completed";
                           }else if($scope.transaction == "RD Purchase"){
@@ -4602,9 +4632,9 @@ $scope.resu ;
                                  $scope.userit[i].stockInward = "yes";
                                  $scope.userit[i].refId=$scope.refId;
                                }else if($scope.transaction == 'Receipt Voucher'||$scope.transaction == 'Opening Stock'){
-                                // console.log($scope.refId+"$scope.refId");
+                           // console.log($scope.refId+"$scope.refId");
                                 //   $scope.userit[i].refId=$scope.refId;
-                                  // alert($scope.userit[i].refId);
+                                   //alert("$scope.userit[i].refId")
                                     $scope.userit[i].orderNO=getOrderNo;
                                   $scope.userit[i].stockInward = "yes";
                                   $scope.userit[i].orderStatus = "completed";
@@ -4652,7 +4682,7 @@ $scope.resu ;
                                 $scope.userit[i].billType =  $scope.billtype;
                              
                                console.log(data)
-                               //alert("hscc "+$scope.userit[i].Hsc)
+                               //alert("hscc ")
                                var data1 = data+","+$scope.userit[i].stockPoint+","+$scope.userit[i].stockInward+","+$scope.userit[i].Hsc+
                                ","+$scope.userit[i].purity+","+$scope.userit[i].pctcal+","+$scope.userit[i].labcal+","+$scope.userit[i].uom+
                                ","+$scope.userit[i].stonecal+","+$scope.userit[i].salesPerson +","+$scope.userit[i].AccNo +","+$scope.userit[i].labourTaxValue+
@@ -4754,6 +4784,7 @@ $scope.resu ;
                                                      //alert(" orderPatyName orderPatyName "+orderPatyName); 
                                                        var myWindow =  window.open('/pdfPrint/'+printFile, "", "width=300,height=300");
                                                        //myWindow.focus();
+                                                       // alert("11")
                                                         // $http.put('/pdfUpdateFromControllerjs',printFile)
                                                         window.location= "orderMaking.html";
                                                 })
@@ -4762,6 +4793,7 @@ $scope.resu ;
                                         setTimeout(function() {  
                                                $http.post('/api/orderDetailsReceiptPdf/'+getOrderNo).success(function(printFile){
                                                      //getOrderNo ="null";
+                                                     //alert("mmmmmmmmm")
                                                      //$window.location = "orderMaking.html";  
                                                        //var myWindow =  window.open('/pdfPrint/'+printFile, "", "width=300,height=300");
                                                        //myWindow.focus();
@@ -4778,7 +4810,7 @@ $scope.resu ;
                                                 
                                                 $http.post('/api/orderDetailsIssueVoucherCallPdf/'+orderPatyName).success(function(printFile){
                                                      //$window.location = "orderMaking.html"; 
-                                                      // alert(" issue nvdsgfnfgn "+orderPatyName)
+                                               //alert(" issue nvdsgfnfgn ")
                                                      //getOrderNo ="null";
                                                     // alert("printFile "+printFile+orderPatyName); 
                                                        var myWindow =  window.open('/pdfPrint/'+printFile, "", "width=300,height=300");

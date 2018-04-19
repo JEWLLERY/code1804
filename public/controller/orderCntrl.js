@@ -6,11 +6,14 @@ $scope.date=new Date()
 $scope.ordersReceipt=0;
 $scope.ordersReceipt1=0;
 
-$scope.usernamedetails = window.sessionStorage.getItem("username")
-  if ($scope.usernamedetails == null) {
+ $scope.usernamedetails = window.sessionStorage.getItem("username")
+         
+          if ($scope.usernamedetails == null) {
              //alert( $scope.usernamedetails);
               $window.location.href = "loginPage.html";
           };
+  $scope.desgination = window.sessionStorage.getItem("desgination")
+
 $scope.date=new Date()
 
 $http.get('/Orderprefixs').success(function(response){

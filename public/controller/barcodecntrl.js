@@ -6,7 +6,14 @@ console.log("welcome barcode")
 console.log(this);
 
 //hotkey usage
- $scope.usernamedetails = window.sessionStorage.getItem("username")
+  $scope.usernamedetails = window.sessionStorage.getItem("username")
+         
+          if ($scope.usernamedetails == null) {
+             //alert( $scope.usernamedetails);
+              $window.location.href = "loginPage.html";
+          };
+  $scope.desgination = window.sessionStorage.getItem("desgination")
+
 $scope.hotkeyButton = false;
 hotkeys.bindTo($scope).add({
     combo: ['ctrl+b'],
@@ -501,6 +508,8 @@ $scope.saveBatchGeneration = function(){
                                       //$scope.userit[p].compositeRef =  $scope.userit[0].barcode ;
                                        $scope.userit[p].compositeRef =  $scope.userit[0].barcode ;
                                        $scope.userit[p].compositenum  = p;
+                                       $scope.userit[p].date= new Date(((new Date(new Date()).toISOString().slice(0, 23))+"-05:30")).toISOString();
+                       
                                        for(let j=0;j<$scope.items.length;j++){
        
          
@@ -509,7 +518,8 @@ $scope.saveBatchGeneration = function(){
                                                           console.log($scope.items[j])
                                                           // alert("Hsc in  items matched"+$scope.items[j].Hsc)
                                                           $scope.userit[p].Hsc=$scope.items[j].Hsc;
-                                                          console.log($scope.userit[p].Hsc)
+                                                          console.log($scope.userit[p].Hsc);
+                                                          
                                                         
                                                           break;
                                                         }//   if ($scope.userit[p].itemName == 
@@ -520,6 +530,7 @@ $scope.saveBatchGeneration = function(){
                                       //       console.log("i got replay")
                                            
                                       //  });
+                                      $scope.userit[p].stockPoint = $scope.userit[0].stockPoint;
                                       $http.post('/transactionstock',$scope.userit[p]);
 
 
